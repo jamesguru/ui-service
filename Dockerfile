@@ -12,7 +12,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go binary, explicitly naming the binary and placing it in the /app directory
-RUN go build -o dev-api
+RUN go build -o /app/dev-api
 
 # Use a minimal base image to run the binary
 FROM alpine:latest
@@ -24,7 +24,7 @@ WORKDIR /app
 RUN apk add --no-cache bash
 
 # Copy the Go binary from the build stage
-COPY --from=builder dev-api .
+COPY --from=builder /app/dev-api .
 
 # Expose the application port
 EXPOSE 3000

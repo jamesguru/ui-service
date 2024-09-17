@@ -1,20 +1,17 @@
-version: '3.8'
 services:
   ui-service:
     container_name: ui-service
-    image: jameskagunga254/ui-service:latest
+    image: jameskagunga254/ui-service:release-falconbet
     restart: always
+    environment:
+      - PORT=3000
+    expose:
+      - 3000
     ports:
-      - "3000:3000"
+      - 3000:3000
     networks:
-      - backend-network
-watchtower:
-  container_name: watchtower
-  image: containrrr/watchtower
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-  command: --interval 30 ui-service
-  
+      - ui_nw
+
 networks:
-  backend_network:
+  ui_nw:
     driver: bridge
