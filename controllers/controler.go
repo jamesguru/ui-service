@@ -35,5 +35,5 @@ func GetUI(c echo.Context) error {
 }
 
 func GetUIs(c echo.Context) error {
-	return c.JSON(http.StatusOK, "This is UI service")
+	return c.JSON(http.StatusOK, "This is UI service falcon bet ui")
 }
