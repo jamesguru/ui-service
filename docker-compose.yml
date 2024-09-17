@@ -13,7 +13,7 @@ watchtower:
   image: containrrr/watchtower
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-  command: --interval 30 ui_service_falconbet
+  command: --interval 30 ui-service
   
 networks:
   backend_network:
