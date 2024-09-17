@@ -1,14 +1,16 @@
-version: '3.8'
 services:
   ui-service:
     container_name: ui-service
     image: jameskagunga254/ui-service:release-falconbet
     restart: always
+    environment:
+      - PORT=3001
+    expose:
+      - 3000
     ports:
-      - "3000:3000"
+      - 3000:3000
     networks:
-      - backend-network
-  
+      - ui_nw
 networks:
-  backend_network:
+  ui_nw:
     driver: bridge
