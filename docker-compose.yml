@@ -1,7 +1,7 @@
 services:
   ui-service:
     container_name: ui-service
-    image: jameskagunga254/ui-service:release-falconbet
+    image: jameskagunga254/ui-service:latest
     restart: always
     environment:
       - PORT=3000
