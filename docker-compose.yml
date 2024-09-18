@@ -1,13 +1,12 @@
-version: '3.8'
 services:
   ui-service:
     container_name: ui-service
-    image: jameskagunga254/ui-service:latest
+    image: jameskagunga254/ui-service:release-bahatibet
     restart: always
     ports:
-      - "3000:3000"
+      - "3001:3001"
     networks:
-      - backend-network
+      - ui_nw
 watchtower:
   container_name: watchtower
   image: containrrr/watchtower
@@ -16,5 +15,5 @@ watchtower:
   command: --interval 30 ui_service_falconbet
   
 networks:
-  backend_network:
+  ui_nw:
     driver: bridge
