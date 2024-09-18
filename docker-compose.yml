@@ -7,12 +7,6 @@ services:
       - "3001:3001"
     networks:
       - ui_nw
-watchtower:
-  container_name: watchtower
-  image: containrrr/watchtower
-  volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
-  command: --interval 30 ui_service_falconbet
   
 networks:
   ui_nw:
