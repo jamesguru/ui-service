@@ -3,11 +3,14 @@ services:
     container_name: ui-service
     image: jameskagunga254/ui-service:release-bahatibet
     restart: always
+    environment:
+      - PORT=3003
+    expose:
+      - 3003
     ports:
-      - "3001:3001"
+      - 3001:3003
     networks:
-      - ui_nw
-  
+      - identity_nw
 networks:
-  ui_nw:
+  identity_nw:
     driver: bridge
